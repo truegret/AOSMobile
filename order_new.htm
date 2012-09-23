@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+		<!--Database storage location for Chrome in Windows: -->
+		<!--   C:\Documents and Settings\Developer2\Local Settings\Application Data\Google\Chrome\User Data\Default\databases\http_www.place2click.com_0 -->
+		<!--Database reference: -->
+		<!--   http://cookbooks.adobe.com/post_Store_data_in_the_HTML5_SQLite_database-19115.html -->
+		<!--HTML5 FileSys reference: -->
+		<!--   http://www.html5rocks.com/en/tutorials/file/filesystem-sync/ -->
+		<!--Author of this site: -->
+		<!--   David Gretlein 20120917 -->
+		<title>PROTOTYPE - Lawson Products Mobile Solution</title>
+		<link rel="stylesheet" type="text/css" href="./includes/style.css" /> 
+		<!-- Date: 2012-09-18 -->
+		<!-- include the Tools -->
+		<!-- kudos to those at flowplayer.org for these tools, thank you! -->
+		<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+		<script src="./scripts/jquerymobile-1.1.1.js"></script>
+		<!-- standalone page styling (can be removed) -->
+		<link rel="stylesheet" type="text/css" href="http://static.flowplayer.org/tools/css/overlay-basic.css"/>
+ 	</head>
+	<body>
+		<div id="new-order-header" class="newordhdr">
+			<table border="0" cellspacing="0" cellpadding="0" bgcolor="#DFDFDF" height="30" width="100%">
+				<tbody>
+					<tr>
+						<td align="center">New Order</td>
+					</tr>
+				</tbody>
+			</table>
+			<table border="0" cellspacing="0" cellpadding="0" bgcolor="#55472F" width="100%">
+				<tbody>
+					<tr>
+						<td colspan="2"></td>
+					</tr><tr>
+						<td><img align="top" src="./images/logo_Lawson.png" alt="logo" /></td>
+						<td>
+							<img rel="#versionsForm" align="right" valign="middle" src="./images/icon-info_512x512.png" alt="info icon" width="32" />
+							<img rel="#configForm" align="right" valign="middle" src="./images/icon-config_256x256.png" alt="config icon" width="32" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- Shipping To: information goes here	-->
+		<div>
+	 		<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100">
+				<tr>
+					<td id="selShipToName" width="30%" nowrap></td><td width="40%"><td width="30%" colspan="2" align="left"><b>Order Number:</b></td>
+				</tr><tr>
+					<td width="30%"><div id="selShipToAddr1"></div></td><td width="40%"><td colspan="2" width="30%" align="left"><b>Create Date:</b></td>
+				</tr><tr>
+					<td width="30%"><div id="selShipToCity"></div></td><td width="40%"><td colspan="2" width="30%" align="left"><b>Delivery Date:</b></td>
+				</tr><tr>
+					<td width="30%"><div id="selShipToStateAndPostal"></div></td><td width="40%"><td width="10%" align="left"><b>PO Number:</b></td><td width="20%" align="right"><input type="text" id="PONumber" /></td>
+				</tr>
+			</table>
+		</div>
+		<div>
+		<!-- Navigation buttons - Scanner and LookupItem -->	
+			<table border="0" cellspacing="0" cellpadding="0" bgcolor="#EFEFEF" height="30" width="100%">
+				<tbody>
+					<tr>
+						<td align="center" width="10%"><button>Scanner</button></td>
+						<td align="center" width="12%"><button rel="#searchForm">Lookup Item</button></td>
+						<td width="78%"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- New Order cell -->	
+			<table border="1" cellspacing="0" cellpadding="1" bgcolor="#EFEFEF" height="30" width="100%">
+				<tbody>
+					<tr>
+						<td align="center" bgcolor="#7A9A01">Item</td>
+						<td align="center" bgcolor="#7A9A01">R</td>
+						<td align="center" bgcolor="#7A9A01">Qty</td>
+						<td align="center" bgcolor="#7A9A01" nowrap>Description</td>
+						<td align="center" bgcolor="#7A9A01">Pack</td>
+						<td align="center" bgcolor="#7A9A01">UOM</td>
+						<td align="center" bgcolor="#7A9A01">NACS</td>
+						<td align="center" bgcolor="#7A9A01">Line Price</td>
+						<td align="center" bgcolor="#7A9A01">Last Sold</td>
+					</tr><tr>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">Band Saw Blades</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">Unknown R</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">5</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF" nowrap>BAND SAW BLADE HARDFLEX 10/14 TPI; 0.035 GA. 7 FT. 1 IN. L X 3/4 W</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">1.0</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">EA</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">N/A</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">N/A</td>
+						<td bgcolor="#FFFFFF" align="left" bgcolor="#EFEFEF">2011-06-30</td>
+					</tr><tr>
+					<table border="1" cellspacing="0" cellpadding="0" bgcolor="#EFEFEF" height="30" width="100%">
+						<tbody>
+							<tr>
+								<td height="80" width="100%">here	</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- Navigation buttons - Save Order and Place Order -->	
+					<table border="1" cellspacing="0" cellpadding="0" bgcolor="#EFEFEF" height="30" width="100%">
+						<tbody>
+							<tr>
+								<td width="76%"></td>
+								<td align="center" width="12%"><button>Save Order</button></td>
+								<td align="center" width="12%"><button>Place Order</button></td>
+							</tr>
+						</tbody>
+					</table>
+					</tr>
+				</tbody>
+			</table>
+			
+				<table border="1" cellspacing="0" cellpadding="0" height="100" width="100%">
+					<tr>
+						<td>Shipping To:<input type="text" id="ShipToName" /></td>
+						<td>Address 1:<input type="text" id="ShipToAddr1" /></td>
+						<td>City: <input type="text" id="ShipToCity" /></td>
+						<td>State: <input type="text" id="ShipToState" /></td>
+						<td>Zip/Postal: <input type="text" id="ShipToZipPostal" /></td>
+					</tr><tr>
+						<td colspan="5">
+							<button onClick="resetForm()">Reset Form</button>
+							<button onClick="updateRecord()">Update</button>
+							<button onClick="insertRecord()">Insert</button>
+							<button onClick="dropAOSTables()">Drop Tables</button>
+							<button onClick="showRecords()">Show Records</button>
+							<br>
+							<button onClick="showAllAOSCustomers()">Show Customer Rec</button>
+							<button onClick="showAllAOSProducts()">Show Products Rec</button>
+							<button onClick="showAllAOSPricing()">Show Pricing Rec</button>
+							<br>
+							<button onClick="insertAOSRecord('AOS_Customers')">Init Customers</button>
+							<button onClick="insertAOSRecord('AOS_Products')">Init Products</button>
+							<button onClick="insertAOSRecord('AOS_Pricing')">Init Pricing</button>
+						</td>
+					</tr>
+				</table>
+
+				<input type="hidden" id="id"/>
+				<input type="hidden" id="ShipToName"/>
+				<input type="hidden" id="ShipToAddr1"/>
+				<input type="hidden" id="ShipToCity"/>
+				<input type="hidden" id="ShipToState"/>
+				<input type="hidden" id="ShipToZipPostal"/>
+
+				<!-- Customers Results section -->
+				<div id="resultsCustomers"></div>
+				<!-- Products Results section -->
+				<div id="resultsProducts"></div>
+				<!-- Pricing Results section -->
+				<div id="resultsPricing"></div>
+				<!-- Limited Customer Results section -->
+				<div id="results"></div>
+		<!-- Bhavesh code for Search Popup -->
+		<div class="simple_overlay" id="searchForm">
+			<div class="details">
+				<table width="400" border="0">
+					<tr>
+						<td>Customer Number:</td>
+						<td><input type="text" id="CustNum" /></td>
+					</tr><tr>
+						<td>Name:</td>
+						<td><input type="text" id="Name1" /></td>
+					</tr><tr>	
+						<td>Name2: </td>
+						<td><input type="text" id="Name2" /></td>
+					</tr><tr>	
+						<td>Postal Code:</td>
+						<td> <input type="text" id="PostalCode" /></td>
+					</tr><tr>	
+						<td>Zip: </td>
+						<td><input type="text" id="Zipode" /></td>
+					</tr><tr>
+						<td colspan="2" align="right">
+							<button onClick="">Search</button>
+						</td>
+					</tr>
+				</table>
+				<div class="scroll">
+					<table width="300" border="1">
+						<tr>
+							<td>&#160;</td>
+							<td>Shipping To:</td>
+							<td>Address 1:</td>
+							<td>City: </td>
+							<td>State: </td>
+							<td>Zip/Postal:</td> 
+						</tr><tr>
+							<td><input type = "radio" name = "recordSelect" id = "redSel"   value = "1" checked = "checked" /> </td>
+							<td>Dan paul:</td>
+							<td>123 abc st</td>
+							<td>Sunnyvale </td>
+							<td>CA </td>
+							<td>94086</td> 
+						</tr><tr>
+							<td><input type = "radio" name = "recordSelect" id = "redSel"   value = "2" checked = "checked" /> </td>
+							<td>Dan paul:</td>
+							<td>123 abc st</td>
+							<td>Sunnyvale </td>
+							<td>CA </td>
+							<td>94086</td>  
+						</tr><tr>
+							<td><input type = "radio" name = "recordSelect" id = "redSel"   value = "3" checked = "checked" /> </td> 
+							<td>Dan paul:</td>
+							<td>123 abc st</td>
+							<td>Sunnyvale </td>
+							<td>CA </td>
+							<td>94086</td>  
+						</tr><tr>
+							<td><input type = "radio" name = "recordSelect" id = "redSel"   value = "4" checked = "checked" /> </td>
+							<td>Dan paul:</td>
+							<td>123 abc st</td>
+							<td>Sunnyvale </td>
+							<td>CA </td>
+							<td>94086</td>  
+						</tr><tr>
+							<td><input type = "radio" name = "recordSelect" id = "redSel"   value = "5" checked = "checked" /> </td>
+							<td>Dan paul:</td>
+							<td>123 abc st</td>
+							<td>Sunnyvale </td>
+							<td>CA </td>
+							<td>94086</td>  
+						</tr>
+					</table>
+				</div>	
+
+				<button align="center" onClick="">Select</button>
+			</div>
+		</div>
+		<!-- System versions popup -->
+		<div class="simple_overlay" id="versionsForm">
+			<table border="0" cellspacing="0" cellpadding="0" height="100" width="400">
+				<tbody>
+					<tr>
+						<td width="80%">AOS (Agent Ordering System)</td>
+						<td id="AOSVersion" width="20%"></td>
+					</tr><tr>
+						<td width="80%">SUP (Sybase Unwired Platform)</td>
+						<td id="SUPVersion" width="20%"></td>
+					</tr><tr>
+						<td width="80%">SAP (System Analysis &amp; Program Development)</td>
+						<td id="SAPVersion" width="20%"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="simple_overlay" id="configForm">
+			<div id="drop_zone">Drop data extract file(s) here ...</div>
+			<output id="list"></output>
+			<script>
+				function handleFileSelect(evt) {
+					evt.stopPropagation();
+					evt.preventDefault();
+					var files = evt.dataTransfer.files; // FileList object.
+					// files is a FileList of File objects. List some properties.
+					var output = [];
+					for (var i = 0, f; f = files[i]; i++) {
+						output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a', '</li>');
+						}
+						document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+					}
+					function handleDragOver(evt) {
+						evt.stopPropagation();
+						evt.preventDefault();
+						evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+				}
+				// Setup the dnd listeners.
+				var dropZone = document.getElementById('drop_zone');
+				dropZone.addEventListener('dragover', handleDragOver, false);
+				dropZone.addEventListener('drop', handleFileSelect, false);
+			</script>
+		</div>
+
+		<script type="text/javascript" src="./scripts/db_functions.js"></script> 
+		<script type="text/javascript" src="./scripts/versions.js"></script> 
+	</div>
+	</body>
+</html>
