@@ -35,8 +35,8 @@
 					</tr><tr>
 						<td><img align="top" src="./images/logo_Lawson.png" alt="logo" /></td>
 						<td>
-							<img rel="#versionsForm" align="right" valign="middle" src="./images/icon-info_512x512.png" alt="info icon" width="32" />
-							<img rel="#configForm" align="right" valign="middle" src="./images/icon-config_256x256.png" alt="config icon" width="32" />
+							<img rel="#versionsForm" align="right" valign="middle" src="./images/icon-info_512x512.png" alt="info icon" title="Show current systems versions" width="32" />
+							<img id="target2" align="right" valign="middle" src="./images/icon-config_256x256.png" alt="config icon" title="Toggles the data configuration screen below the main screen" width="32" />
 						</td>
 					</tr>
 				</tbody>
@@ -95,7 +95,7 @@
 					<table border="1" cellspacing="0" cellpadding="0" bgcolor="#EFEFEF" height="30" width="100%">
 						<tbody>
 							<tr>
-								<td height="80" width="100%">here	</td>
+								<td height="80" width="100%"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -112,7 +112,7 @@
 					</tr>
 				</tbody>
 			</table>
-			
+			<div id="initData">
 				<table border="1" cellspacing="0" cellpadding="0" height="100" width="100%">
 					<tr>
 						<td>Shipping To:<input type="text" id="ShipToName" /></td>
@@ -154,6 +154,7 @@
 				<div id="resultsPricing"></div>
 				<!-- Limited Customer Results section -->
 				<div id="results"></div>
+			</div>
 		<!-- Bhavesh code for Search Popup -->
 		<div class="simple_overlay" id="searchForm">
 			<div class="details">

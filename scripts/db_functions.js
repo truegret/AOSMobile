@@ -298,3 +298,22 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("img[rel]").overlay();
 });	   
+
+// Experimenting with toggles.  jquery has a toggle function but doesn't see to be working
+$('#target').toggle(function() {
+	alert('First handler for target.toggle() called.');
+	var control = document.getElementById('initData');
+}, function() {
+	alert('Second handler for target.toggle() called.');
+	var control = document.getElementById('initData');
+});
+
+$(document).ready(function() {
+	$('#target2').click(function() {
+		var control = document.getElementById('initData');
+		if(control.style.visibility == "visible" || control.style.visibility == "")
+			control.style.visibility = "hidden";
+		else 
+			control.style.visibility = "visible";
+        });
+});
